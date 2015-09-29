@@ -18,7 +18,10 @@ use yii\widgets\ActiveForm;
     echo $form->field($model, 'path')->textInput(['maxlength' => true]);
     ?>
     <div class="form-group">
-        <?php echo Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?php echo Html::submitButton($model->isNewRecord
+            ? Yii::t('filemanager', 'Create')
+            : Yii::t('filemanager', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']);
+        ?>
     </div>
 
     <?php ActiveForm::end(); ?>
